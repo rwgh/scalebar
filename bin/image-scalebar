@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+#$KCODE = 'UTF8'
+#$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'scalebar'
+#require File.dirname(__FILE__) + '/../../cameca/lib/cameca'
+# require 'optparse'
+# require 'matrix'
+# require 'yaml'
+# require 'dimensions'
+#require 'array'
+
+app = Scalebar::Scalebar.new(STDOUT,ARGV)
+app.run
