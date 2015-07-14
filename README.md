@@ -1,6 +1,6 @@
 # Scalebar
 
-TODO: Write a gem description
+Put scalebar on image
 
 ## Installation
 
@@ -19,9 +19,19 @@ Or install it yourself as:
     $ gem source -a http://dream.misasa.okayama-u.ac.jp/rubygems
     $ gem install scalebar
 
+## Commands
+
+Commands are summarized as:
+
+| command         | description           | note  |
+| --------------- | --------------------- | ----- |
+| image-scalebar  | Put scalebar on image |       |
+
 ## Usage
 
-TODO: Write usage instructions here
+See online document:
+
+    $ image-scalebar --help
 
 ## Contributing
 
