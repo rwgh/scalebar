@@ -2,7 +2,7 @@
 
 Put scalebar on image
 
-## Installation
+# Installation
 
 Add this line to your application's Gemfile:
 
@@ -19,7 +19,7 @@ Or install it yourself as:
     $ gem source -a http://dream.misasa.okayama-u.ac.jp/rubygems
     $ gem install scalebar
 
-## Commands
+# Commands
 
 Commands are summarized as:
 
@@ -27,13 +27,13 @@ Commands are summarized as:
 | --------------- | --------------------- | ----- |
 | image-scalebar  | Put scalebar on image |       |
 
-## Usage
+# Usage
 
 See online document:
 
     $ image-scalebar --help
 
-## Contributing
+# Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/scalebar/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
