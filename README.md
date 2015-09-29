@@ -1,4 +1,4 @@
-# Scalebar
+# scalebar
 
 Put scalebar on image
 
