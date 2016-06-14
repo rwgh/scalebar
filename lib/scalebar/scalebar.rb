@@ -63,7 +63,7 @@ module Scalebar
 	EXAMPLE
 	  $ ls
 	  Suiton.png Suiton.txt
-	  $ image-scalebar Suiton.png
+	  $ image-scalebar --grid=1 Suiton.png
 	  writing |./Suiton.tex|...
 	  $ ls
 	  Suiton.png Suiton.txt Suiton.tex
