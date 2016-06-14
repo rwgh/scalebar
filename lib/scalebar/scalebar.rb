@@ -42,46 +42,47 @@ module Scalebar
 	    Trollop::options(argv) do
 	        # banner "  Usage: scalebar imagefile"
 	      banner  <<"EOS"
-	NAME
-	  #{File.basename($0, '.*')} - Put scalebar on image
+NAME
+  #{File.basename($0, '.*')} - Put scalebar on image
 
-	SYNOPSIS
-	  #{File.basename($0, '.*')} [options] imagefile
+SYNOPSIS
+  #{File.basename($0, '.*')} [options] imagefile
 
-	HISTORY
-	  April 10, 2015: Rename scalebar as #{File.basename($0, '.*')} by MY
-	  April 23, 2015: Add online documentation by TK
-	  April 24, 2015: Add grid capability by YY
+HISTORY
+  June 14, 2016: Document revised by TK
+  April 24, 2015: Add grid capability by YY
+  April 23, 2015: Add online documentation by TK
+  April 10, 2015: Rename scalebar as #{File.basename($0, '.*')} by MY
 
-	DESCRIPTION
-	  Put scalebar on image.  On launch, this program looks for
-	  imagefile.txt, which is image-property file created by JEOL
-	  JSM-7001F.  Based on the information, a LaTeX file that includes the
-	  image file with scale bar is created.  In a case where no
-	  imagefile.txt was found, width of image is asked.
+DESCRIPTION
+  Put scalebar on image.  On launch, this program looks for
+  imagefile.txt, which is image-property file created by JEOL
+  JSM-7001F.  Based on the information, a LaTeX file that includes the
+  image file with scale bar is created.  In a case where no
+  imagefile.txt was found, width of image is asked.
 
-	EXAMPLE
-	  $ ls
-	  Suiton.png Suiton.txt
-	  $ image-scalebar --grid=1 Suiton.png
-	  writing |./Suiton.tex|...
-	  $ ls
-	  Suiton.png Suiton.txt Suiton.tex
+EXAMPLE
+  $ ls
+  Suiton.png Suiton.txt
+  $ image-scalebar --grid=1 Suiton.png
+  writing |./Suiton.tex|...
+  $ ls
+  Suiton.png Suiton.txt Suiton.tex
 
-	SEE ALSO
-	  spots0
-	  spots.m
-	  automosaic
-	  http://dream.misasa.okayama-u.ac.jp
+SEE ALSO
+  spots0
+  spots.m
+  automosaic
+  http://dream.misasa.okayama-u.ac.jp
 
-	TECHNICAL NOTE
-	  JEOL defines magnification relative to 12 cm width.
+TECHNICAL NOTE
+  JEOL defines magnification relative to 12 cm width.
 
-	IMPLEMENTATION
-	  Copyright (c) 2013 ISEI, Okayama University
-	  Licensed under the same terms as Ruby
+IMPLEMENTATION
+  Copyright (c) 2013 ISEI, Okayama University
+  Licensed under the same terms as Ruby
 
-	OPTIONS
+OPTIONS
 EOS
 	#  -g, --grid=<pitch>         Impose grid with pitch in mm (not implemented)
 	  #      opt :output, "Specify output filename", :type => :string
