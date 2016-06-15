@@ -24,7 +24,7 @@ module Scalebar
 	      h[:um] = t
 	      h[:prop] = s + idx * tick_in_prop
 	      ticks << h
-	    end  
+	    end
 	    return ticks
 	  end
 
@@ -79,7 +79,7 @@ TECHNICAL NOTE
   JEOL defines magnification relative to 12 cm width.
 
 IMPLEMENTATION
-  Copyright (c) 2013 ISEI, Okayama University
+  Copyright (c) 2013-2016 ISEI, Okayama University
   Licensed under the same terms as Ruby
 
 OPTIONS
@@ -90,7 +90,7 @@ EOS
 	      opt :width, "Specify width in mm", :type => :float
 	      opt :grid, "Impose grid with pitch in mm", :type => :float
 	  #      opt :yes, "Answer yes for all questions", :type => :boolean
-	    end    
+	    end
 	  end
 
 	  def normalized_dimensions
@@ -239,7 +239,7 @@ EOS
 	    if params[:grid]
 	      @tick_in_mm = params[:grid]
 	    end
-	#    Trollop::die "specify magnification" unless magnification    
+	#    Trollop::die "specify magnification" unless magnification
 	  end
 
 	  def run
@@ -252,7 +252,7 @@ EOS
 	  end
 
 	  def get_timestamp
-	    timestamp = Time.now.strftime("%d-%b-%Y %H:%M:%S")      
+	    timestamp = Time.now.strftime("%d-%b-%Y %H:%M:%S")
 	  end
 
 	  def format(float, fmt = "%.2f")
@@ -275,7 +275,7 @@ EOS
 	      io.puts '%%% ' + sprintf("Scalebar of |%.0f| micro meter is drawn.", scale_length_on_stage )
 	      if grid_in_mm
 	        io.puts '%%% ' + sprintf("Grids of |%.0f| micro meter pitch are drawn.", grid_in_mm * 1000 )
-	      end      
+	      end
 	    end
 	    io.puts '%%%'
 	    io.puts '% \\documentclass[12pt]{article}'
@@ -311,7 +311,7 @@ EOS
 	    io.puts '% ' + sprintf('\\label{spots:%s at %s}', basename, timestamp)
 	    io.puts '% \\end{figure}'
 	    io.puts '% \\end{document}'
-	    io.close      
+	    io.close
 	  end
 
 	  def draw_grids
@@ -328,9 +328,9 @@ EOS
 	    line_color = "white"
 	    tex = []
 	    tex << "\n  % draw grids"
-	    tex << "  \\linethickness{0.1pt}"    
+	    tex << "  \\linethickness{0.1pt}"
 	    tex << "  \\multiput(#{format(x_ticks[1][:prop])},0.0)(#{format(tick_in_prop)}, 0.0){#{x_ticks.size - 2}}{\\textcolor{#{line_color}}{ \\line(0,1){ #{format(height_in_prop)} }} }"
-	    tex << "  \\multiput(0.0, #{format(y_ticks[1][:prop])})(0.0, #{format(tick_in_prop)}){#{y_ticks.size - 2}}{\\textcolor{#{line_color}}{ \\line(1,0){ #{format(width_in_prop)} }} }"    
+	    tex << "  \\multiput(0.0, #{format(y_ticks[1][:prop])})(0.0, #{format(tick_in_prop)}){#{y_ticks.size - 2}}{\\textcolor{#{line_color}}{ \\line(1,0){ #{format(width_in_prop)} }} }"
 	    tex << "\n  % draw scale on rulers"
 	    tex << "  \\linethickness{0.5pt}"
 	    tex << "  \\multiput(#{format(x_ticks[0][:prop], '%.3f') }, 0.0)(#{format(tick_in_prop, '%.3f')}, 0.0){#{x_ticks.size}}{\\textcolor{#{line_color}}{ \\line(0,1){ #{format(tick_in_prop/10)} }} }"
@@ -341,15 +341,15 @@ EOS
 	    tex << "  \\multiput(0.0, #{format(y_ticks[1][:prop] - tick_in_prop, '%.3f') })(0.0, #{format(tick_in_prop/10, '%.3f')}){#{(y_ticks.size - 1) * 10}}{\\textcolor{#{line_color}}{ \\line(1,0){ #{format(tick_in_prop/20)} }} }"
 	    tex << "\n  % define grid name"
 	    x_ticks[0...-1].each_with_index do |x_tick, index|
-	      tex << "  \\put(#{format(x_tick[:prop])},#{format(height_in_prop + tick_in_prop/4)}){\\textcolor{#{text_color}}{\\makebox(#{format(tick_in_prop)},#{format(tick_in_prop/2)}){\\textbf{ #{self.class.get_alphabet(index)} }}}}"    
-	    end 
+	      tex << "  \\put(#{format(x_tick[:prop])},#{format(height_in_prop + tick_in_prop/4)}){\\textcolor{#{text_color}}{\\makebox(#{format(tick_in_prop)},#{format(tick_in_prop/2)}){\\textbf{ #{self.class.get_alphabet(index)} }}}}"
+	    end
 	    y_ticks.reverse[1..-1].each_with_index do |y_tick, index|
-	      tex << "  \\put(#{format(width_in_prop)},#{format(y_tick[:prop])}){\\textcolor{#{text_color}}{\\makebox(#{format(tick_in_prop/2)},#{format(tick_in_prop)})[l]{\\textbf{ #{index + 1} }}}}"    
-	    end 
-	    tex << "\n  % define x y in mm"  
+	      tex << "  \\put(#{format(width_in_prop)},#{format(y_tick[:prop])}){\\textcolor{#{text_color}}{\\makebox(#{format(tick_in_prop/2)},#{format(tick_in_prop)})[l]{\\textbf{ #{index + 1} }}}}"
+	    end
+	    tex << "\n  % define x y in mm"
 	    x_ticks[1...-1].each_with_index do |x_tick, index|
-	      tex << "  \\put(#{format(x_tick[:prop] - tick_in_prop/2)},#{format(-tick_in_prop/2)}){\\textcolor{#{text_color}}{\\makebox(#{format(tick_in_prop)},#{format(tick_in_prop/4)}){ \\scriptsize $#{format(x_tick[:um]/1000, '%.0f')}$ }}}"        
-	    end   
+	      tex << "  \\put(#{format(x_tick[:prop] - tick_in_prop/2)},#{format(-tick_in_prop/2)}){\\textcolor{#{text_color}}{\\makebox(#{format(tick_in_prop)},#{format(tick_in_prop/4)}){ \\scriptsize $#{format(x_tick[:um]/1000, '%.0f')}$ }}}"
+	    end
 	    y_ticks[1...-1].reverse.each_with_index do |y_tick, index|
 	      tex << "  \\put(#{format(- tick_in_prop/4)},#{format(y_tick[:prop] - tick_in_prop/2)}){\\textcolor{#{text_color}}{\\makebox(#{format(tick_in_prop/4)},#{format(tick_in_prop)})[r]{ \\scriptsize $#{format(y_tick[:um]/1000, '%.0f')}$ }}}"
 	    end
