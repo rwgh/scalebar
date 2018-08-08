@@ -2,6 +2,10 @@
 
 Put scalebar on image
 
+# Description
+
+Put scalebar on image.
+
 # Installation
 
 Add this line to your application's Gemfile:
