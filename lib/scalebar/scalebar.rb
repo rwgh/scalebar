@@ -55,11 +55,14 @@ HISTORY
   April 10, 2015: Rename scalebar as #{File.basename($0, '.*')} by MY
 
 DESCRIPTION
-  Put scalebar on image.  On launch, this program looks for
-  imagefile.txt, which is image-property file created by JEOL
-  JSM-7001F.  Based on the information, a LaTeX file that includes the
-  image file with scale bar is created.  In a case where no
-  imagefile.txt was found, width of image is asked.
+  Put scalebar on image.  Create a LaTeX file that includes
+  scale bar or scale grids with indexes.
+
+  On launch, this program looks for `imagefile.txt', which is
+  image-property file created by JEOL JSM-7001F.  Based on the
+  information, a LaTeX file that includes the image file with scale
+  bar is created.  In a case where no `imagefile.txt' was found, 
+  width of image is prompted.
 
 EXAMPLE
   $ ls
@@ -79,8 +82,13 @@ TECHNICAL NOTE
   JEOL defines magnification relative to 12 cm width.
 
 IMPLEMENTATION
-  Copyright (c) 2013-2016 ISEI, Okayama University
-  Licensed under the same terms as Ruby
+  Copyright (C) 2013-2018 Okayama University
+  License GPLv3+: GNU GPL version 3 or later
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 3, or (at your option)
+  any later version.
 
 OPTIONS
 EOS

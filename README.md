@@ -4,7 +4,8 @@ Put scalebar on image
 
 # Description
 
-Put scalebar on image.
+Put scalebar on image.  Create a LaTeX file that includes scale bar or
+scale grids with indexes.
 
 # Installation
 
