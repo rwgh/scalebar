@@ -1,4 +1,4 @@
-# scalebar
+# gem package -- scalebar
 
 Put scalebar on image
 
