@@ -9,17 +9,7 @@ scale grids with indexes.
 
 # Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'scalebar'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install this package as:
 
     $ gem source -a http://dream.misasa.okayama-u.ac.jp/rubygems
     $ gem install scalebar
