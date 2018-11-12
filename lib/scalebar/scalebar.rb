@@ -74,8 +74,9 @@ EXAMPLE
 
 TIPS
   When you want to utilize imageometry, call `spots-warp'.  Create
-  stagelist.txt and estimate width of an image.  The detail steps
-  are shown below.
+  stagelist.txt and estimate width of an image.  The detail steps are
+  shown below.  Note that this only works when edge of x is longer
+  than edge of y.
 
   CMD> dir
   mnt-NM-61.jpg   mnt-NM-61.geo
@@ -83,12 +84,10 @@ TIPS
   CMD> type stagelist.txt
   Class	Name	X-Locate	Y-Locate	Data
   0	x=-50	-50	0
-  0	x=0	0	0
   0	x=+50	50	0
   CMD> spots-warp stagelist.txt -a mnt-NM-61_.geo
   Class	Name	X-Locate	Y-Locate	Data
   0	x=-50	-6709.499	512.209
-  0	x=0	5380.766	512.209
   0	x=+50	17471.030	512.209
   R> (17471.030-(-6709.499))/1000
   [1] 24.18053
