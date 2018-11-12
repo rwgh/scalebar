@@ -61,7 +61,7 @@ DESCRIPTION
   On launch, this program looks for `imagefile.txt', which is
   image-property file created by JEOL JSM-7001F.  Based on the
   information, a LaTeX file that includes the image file with scale
-  bar is created.  In a case where no `imagefile.txt' was found, 
+  bar is created.  In a case where no `imagefile.txt' was found,
   width of image is prompted.
 
 EXAMPLE
@@ -72,11 +72,34 @@ EXAMPLE
   $ ls
   Suiton.png Suiton.txt Suiton.tex
 
+TIPS
+  When you want to utilize imageometry, call `spots-warp'.  Create
+  stagelist.txt and estimate width of an image.  The detail steps
+  are shown below.
+
+  CMD> dir
+  mnt-NM-61.jpg   mnt-NM-61.geo
+  mnt-NM-61_.jpg  mnt-NM-61_.geo  stagelist.txt
+  CMD> type stagelist.txt
+  Class	Name	X-Locate	Y-Locate	Data
+  0	x=-50	-50	0
+  0	x=0	0	0
+  0	x=+50	50	0
+  CMD> spots-warp stagelist.txt -a mnt-NM-61_.geo
+  Class	Name	X-Locate	Y-Locate	Data
+  0	x=-50	-6709.499	512.209
+  0	x=0	5380.766	512.209
+  0	x=+50	17471.030	512.209
+  R> (17471.030-(-6709.499))/1000
+  [1] 24.18053
+  CMD> image-scalebar --width 24.18053 --grid=1 mnt-NM-61_.jpg
+  writing to |./mnt-NM-61_.tex|...
+
 SEE ALSO
   spots0
   spots.m
-  automosaic
-  http://dream.misasa.okayama-u.ac.jp
+  spots-warp <https://gitlab.misasa.okayama-u.ac.jp/gems/multi_stage>
+  https://github.com/misasa/scalebar
 
 TECHNICAL NOTE
   JEOL defines magnification relative to 12 cm width.
