@@ -97,7 +97,7 @@ TIPS
 SEE ALSO
   spots0
   spots.m
-  spots-warp <https://gitlab.misasa.okayama-u.ac.jp/gems/multi_stage>
+  spots-warp in gem package -- multi_stage <https://gitlab.misasa.okayama-u.ac.jp/gems/multi_stage>
   https://github.com/misasa/scalebar
 
 TECHNICAL NOTE
