@@ -59,10 +59,11 @@ DESCRIPTION
   scale bar or scale grids with indexes.
 
   On launch, this program looks for `imagefile.txt', which is
-  image-property file created by JEOL JSM-7001F.  Based on the
-  information, a LaTeX file that includes the image file with scale
-  bar is created.  In a case where no `imagefile.txt' was found,
-  width of image is prompted.
+  image-property file created by JEOL JSM-7001F, that is often
+  referred as an imajeoletry file.  Based on the information, a LaTeX
+  file that includes the image file with scale bar is created.  In a
+  case where no `imagefile.txt' was found, feed width of image by
+  yourself.
 
 EXAMPLE
   $ ls
