@@ -11,7 +11,7 @@ scale grids with indexes.
 
 Install this package as:
 
-    $ gem source -a http://dream.misasa.okayama-u.ac.jp/rubygems
+    $ gem source -a http://dream.misasa.okayama-u.ac.jp/rubygems/
     $ gem install scalebar
 
 # Commands
