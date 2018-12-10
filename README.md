@@ -1,6 +1,6 @@
 # gem package -- scalebar
 
-Put scalebar on image
+Draws scalebar on image.
 
 # Description
 
