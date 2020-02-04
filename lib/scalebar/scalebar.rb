@@ -100,6 +100,7 @@ SEE ALSO
   spots.m
   spots-warp in gem package -- multi_stage <https://gitlab.misasa.okayama-u.ac.jp/gems/multi_stage>
   https://github.com/misasa/scalebar
+  https://github.com/misasa/scalebar/blob/master/bin/image-scalebar
 
 TECHNICAL NOTE
   JEOL defines magnification relative to 12 cm width.
