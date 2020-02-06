@@ -106,7 +106,7 @@ TECHNICAL NOTE
   JEOL defines magnification relative to 12 cm width.
 
 IMPLEMENTATION
-  Copyright (C) 2013-2018 Okayama University
+  Copyright (C) 2013-2020 Okayama University
   License GPLv3+: GNU GPL version 3 or later
 
   This program is free software; you can redistribute it and/or modify
