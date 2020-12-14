@@ -2,6 +2,10 @@
 
 Draw scalebar on image.
 
+# Requirements
+
+Ruby 2.5, 2.6, or 2.7.
+
 # Description
 
 Put scalebar on image.  Create a LaTeX file that includes scale bar or
