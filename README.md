@@ -31,3 +31,4 @@ Commands are summarized as:
 See online document:
 
     $ image-scalebar --help
+
